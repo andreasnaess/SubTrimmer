@@ -11,12 +11,10 @@ try:
     f = open(sys.argv[1], 'r')
     data = f.read()
     paragraphList = data.split("\n\n")
-    count = 0
     for paragraph in paragraphList:
         paragraphLines = paragraph.split("\n")
         if not paragraphLines[0]:
             continue
-        count += 1
         indexCount += 1
         index.append(str(indexCount))
         timestamp.append(paragraphLines[1])
