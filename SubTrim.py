@@ -24,11 +24,12 @@ try:
             if re.search('\(|\)', line):
                 parenthesesSeen = True
                 continue
-            subjectMatch = re.search('^[A-Z]*:', line)
+            subjectMatch = re.search('^.*:\s?\n?', line)
             if subjectMatch:
-                substring = subjectMatch.group(0) + " "
+                substring = subjectMatch.group(0)
                 newLine = line.replace(substring, "")
-                tempSub += newLine + '\n'
+                if newLine:
+                    tempSub += newLine + '\n'
                 continue
             tempSub += line + '\n'
 
