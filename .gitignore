@@ -61,6 +61,5 @@ target/
 #Ipython Notebook
 .ipynb_checkpoints
 
-# Intellij
-
+# IDEA files
 .idea/workspace.xml
